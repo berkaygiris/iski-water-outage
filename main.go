@@ -9,10 +9,9 @@ import (
 )
 
 func main() {
-	filename := "data/data-1.json"
-	apiResponse, err := internal.ReadFromFile(filename)
+	apiResponse, err := internal.FetchData()
 	if err != nil {
-		log.Fatalf("Error reading the data: %v", err)
+		log.Fatalf("Error fetching the data: %v", err)
 	}
 
 	outages, err := internal.ParseOutages(apiResponse)
